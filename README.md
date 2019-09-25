@@ -1,4 +1,5 @@
 # GraphMix
+This is the Pytorch code for reproducing the results of the Paper GraphMix (inset link).
 
 ## Requirements 
 This code is tested with Python 3.6.3 and requires following packages (see requirements.txt list of all the packages):
@@ -24,7 +25,7 @@ tqdm==4.32.2
 
 # How to run 
 
-For reproducint results of GraphMix(GCN) of Table1 in the paper, go to directory GraphMix/semisupervised/codes and run the following commands:
+For reproducing results of GraphMix(GCN) of Table1 in the paper, go to directory GraphMix/semisupervised/codes and run the following commands:
 
 `python run_cora.py`
 
@@ -32,5 +33,7 @@ For reproducint results of GraphMix(GCN) of Table1 in the paper, go to directory
 
 `python run_pubmed.py`
 
+
+Some of the code is based on the github repo : https://github.com/DeepGraphLearning/GMNN
 
 
