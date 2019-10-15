@@ -182,6 +182,8 @@ def train(epoches):
     for epoch in range(epoches):
         rand_index = random.randint(0,1)
         if rand_index == 0:
+            trainer.model.train()
+            trainer.optimizer.zero_grad()
             k = 10
             temp  = torch.zeros([k, target_q.shape[0], target_q.shape[1]], dtype=target_q.dtype)
             temp = temp.cuda()
@@ -196,18 +198,15 @@ def train(epoches):
             loss , loss_usup= trainer.update_soft_aux(inputs_q, target_q, target, idx_train, idx_unlabeled_subset, adj,  opt, mixup_layer =[1])
             mixup_consistency = get_current_consistency_weight(opt['mixup_consistency'], epoch)
             total_loss = loss + mixup_consistency*loss_usup
-            trainer.model.train()
-            trainer.optimizer.zero_grad()
             total_loss.backward()
             trainer.optimizer.step()
 
         else:
-            
+            trainer.model.train()
+            trainer.optimizer.zero_grad()
             loss = trainer.update_soft(inputs_q, target_q, idx_train)
             
             total_loss = loss
-            trainer.model.train()
-            trainer.optimizer.zero_grad()
             total_loss.backward()
             trainer.optimizer.step()
         _, preds, accuracy_train = trainer.evaluate(inputs_q, target, idx_train)
