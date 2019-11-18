@@ -34,6 +34,8 @@ For reproducing results of GraphMix(GCN) of Table1 in the paper, go to directory
 `python run_pubmed.py`
 
 
-This code is based on the github repo : https://github.com/DeepGraphLearning/GMNN
+This codebase is based on the github repo : https://github.com/DeepGraphLearning/GMNN
+
+To all the people using this codebase: let us know in the "issues" if you are having some difficulity in reproducing the results. 
 
 
