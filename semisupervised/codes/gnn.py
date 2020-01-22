@@ -29,8 +29,10 @@ def mixup_gnn_hidden(x, target, train_idx, alpha):
     else:
         lam = 1.
     permuted_train_idx = train_idx[torch.randperm(train_idx.shape[0])]
-    x[train_idx] = lam*x[train_idx]+ (1-lam)*x[permuted_train_idx]
-    return x, target[train_idx], target[permuted_train_idx],lam
+    # autograd doesnt work if tensors are modified in-place, make a copy instead
+    x_new = x.clone()
+    x_new[train_idx] = lam*x[train_idx]+ (1-lam)*x[permuted_train_idx]
+    return x_new, target[train_idx], target[permuted_train_idx],lam
 
 
 
