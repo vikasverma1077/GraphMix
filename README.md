@@ -1,5 +1,5 @@
 # GraphMix
-This is the Pytorch code for reproducing the results of the Paper GraphMix (https://arxiv.org/pdf/1909.11715.pdf). GraphMix is a simple and efficient regularization method for Graph Neural Networks (GNN) based Semi-Supervised Learning over Graph Structured Data. We show that with this regularizer, even the simpler GNN architecture such as GCN (Kipf et. al.) can achiever state-of-the-art results on benchmark graph datasets such as Cora/Citeseer/Pubmed.
+This is the Pytorch code for reproducing the results of the Paper GraphMix (https://arxiv.org/pdf/1909.11715.pdf). GraphMix is a simple and efficient regularization method for Graph Neural Networks (GNN) based Semi-Supervised node classification. We show that with this regularizer, even the simpler GNN architecture such as GCN (Kipf et. al.) can achiever state-of-the-art results on benchmark graph datasets such as Cora/Citeseer/Pubmed.
 
 ## Requirements 
 This code is tested with Python 3.6.3 and requires following packages (see requirements.txt list of all the packages):
